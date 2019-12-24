@@ -19,9 +19,13 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BToast"></activity>
+        <activity android:name=".ReadLetter"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
+        <activity android:name=".ThreeDLayout" />
+        <activity android:name=".BToast" />
         <activity android:name=".PickerView" />
-        <activity android:name=".receiveMessage"
+        <activity
+            android:name=".receiveMessage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SendMessage"

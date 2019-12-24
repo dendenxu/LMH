@@ -33,19 +33,19 @@ import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 public class MainActivity extends AppCompatActivity {
+    ThreeDLayout myThreeD;
     public LottieAnimationView animationView;
     public RelativeLayout quteview;
     public LinearLayout mask;
     GestureDetector mGestureDetector;
     myGesture mGestureListener;
-    FrameLayout.LayoutParams layoutParams;
+    RelativeLayout.LayoutParams layoutParams;
     int quteheight=0;
     int startX,startY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         animationView = (LottieAnimationView) findViewById(R.id.animation_view);
         animationView.setImageAssetsFolder("images/");
         animationView.setAnimation("data.json");
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         mGestureListener=new myGesture(getApplicationContext());
         mGestureDetector = new GestureDetector(getApplicationContext(), mGestureListener);
 
-        layoutParams = (FrameLayout.LayoutParams) quteview.getLayoutParams();
+        layoutParams = (RelativeLayout.LayoutParams) quteview.getLayoutParams();
         layoutParams.setMargins(0, 0, 0, (int)(-600*0.316-220));
         quteview.setLayoutParams(layoutParams);
 

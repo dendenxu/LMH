@@ -13,9 +13,43 @@
         android:id="@+id/animation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:paddingTop="150dp"
+                android:layout_weight="23"
+                android:src="@mipmap/letter"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:gravity="center"/>
+            <ImageView
+                android:src="@mipmap/biaoti"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp" /></LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"></LinearLayout>
+
+    </LinearLayout>
+
+
 
     <include layout="@layout/content_main" />
-
-
 
 </RelativeLayout>
