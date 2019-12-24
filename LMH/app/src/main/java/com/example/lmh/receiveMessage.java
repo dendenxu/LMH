@@ -31,12 +31,15 @@ public class receiveMessage extends AppCompatActivity {
                 search_btn.playAnimation();
                 //TODO  这里是按下按钮后，提取用户当前的天气，位置，时间等因素，在数据库里搜索是否有符合条件的信件
 
+
+                //TODO  这里是符合条件以后，因为虚拟现实还没实现，所以直接跳转到了读信界面
                new Thread()
                {
                    @Override
                    public void run()
                    {
                        try {
+                           //TODO 模拟搜索的耗时
                            Thread.sleep(3000);
                        } catch (InterruptedException e) {
                            e.printStackTrace();
