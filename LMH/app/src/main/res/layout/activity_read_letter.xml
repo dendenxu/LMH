@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".ReadLetter"
     android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:layout_centerHorizontal="true"
     android:background="#464159">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"></LinearLayout>
 
 <RelativeLayout
+    android:paddingTop="40dp"
+    android:layout_gravity="center_vertical"
+    android:layout_centerHorizontal="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout

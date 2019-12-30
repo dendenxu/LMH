@@ -19,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.File;
@@ -29,7 +30,7 @@ import java.util.List;
 public class takephoto extends AppCompatActivity {
     public static final int TAKE_PHOTO = 1;
     ThreeDLayout layout;
-    ImageView imgview;
+    Button read;
     private ImageView picture;
     //图片本地的真实路径
     private Uri imageUri;
@@ -88,8 +89,8 @@ public class takephoto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_takephoto);
 
-        imgview=findViewById(R.id.picture);
-        imgview.setOnClickListener(new View.OnClickListener() {
+        read=findViewById(R.id.read);
+        read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sendIntent=new Intent(takephoto.this,ReadLetter.class);
@@ -130,6 +131,7 @@ public class takephoto extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         switch (requestCode) {
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {

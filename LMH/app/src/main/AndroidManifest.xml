@@ -31,7 +31,8 @@
             android:name="com.google.android.actions"
             android:resource="@xml/file_paths" />
 
-        <activity android:name=".takephoto">
+        <activity android:name=".takephoto"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
