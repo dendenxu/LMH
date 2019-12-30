@@ -6,22 +6,9 @@
     tools:context=".ReadLetter"
     android:orientation="vertical"
     android:background="#464159">
-    <com.example.lmh.ThreeDLayout
-        android:layout_marginTop="50dp"
-        android:id="@+id/td_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        >
-
-        <ImageView
-            android:src="@mipmap/letter"
-            android:id="@+id/textView"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-    </com.example.lmh.ThreeDLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"></LinearLayout>
 
 <RelativeLayout
     android:layout_width="match_parent"

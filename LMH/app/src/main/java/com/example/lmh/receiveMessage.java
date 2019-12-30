@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -17,11 +18,17 @@ public class receiveMessage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_message);
         initBtn();
-
-
-
     }
-
+    private void toast_good()
+    {
+        //TODO 匹配成功请调用这个
+        BToast.showText(receiveMessage.this, "匹配成功", Toast.LENGTH_LONG,true);
+    }
+    private void toast_bad()
+    {
+        //TODO 匹配失败请调用这个
+        BToast.showText(receiveMessage.this, "匹配失败",Toast.LENGTH_LONG,false);
+    }
     private void initBtn()
     {
         search_btn=findViewById(R.id.listen_btn);
@@ -44,7 +51,7 @@ public class receiveMessage extends AppCompatActivity {
                        } catch (InterruptedException e) {
                            e.printStackTrace();
                        }
-                       Intent sendIntent=new Intent(receiveMessage.this,ReadLetter.class);
+                       Intent sendIntent=new Intent(receiveMessage.this,takephoto.class);
                        startActivity(sendIntent);
                    }
                }.start();
