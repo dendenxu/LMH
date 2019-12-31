@@ -1,33 +1,23 @@
 package com.example.lmh;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.android.material.internal.FlowLayout;
+import com.example.lmh.util.ThreeDLayout;
+import com.example.lmh.util.myGesture;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;

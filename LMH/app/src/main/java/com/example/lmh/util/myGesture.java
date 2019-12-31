@@ -1,4 +1,4 @@
-package com.example.lmh;
+package com.example.lmh.util;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,7 +12,7 @@ import static com.airbnb.lottie.L.TAG;
 public class myGesture  extends GestureDetector.SimpleOnGestureListener {
     Context mContext;
     public float distance;
-    myGesture(Context context) {
+    public myGesture(Context context) {
         mContext = context;
     }
     @Override

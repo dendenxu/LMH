@@ -195,7 +195,7 @@
                        android:orientation="horizontal"
                        android:textSize="16sp"
                        >
-                       <com.example.lmh.PickerView
+                       <com.example.lmh.util.PickerView
                             android:layout_weight="1"
                            android:id="@+id/hour_pv"
                            android:layout_width="80dp"
@@ -212,7 +212,7 @@
                            android:textColor="#8887A4"
                            android:textSize="20sp"/>
 
-                       <com.example.lmh.PickerView
+                       <com.example.lmh.util.PickerView
                            android:layout_weight="1"
                            android:id="@+id/minute_pv"
                            android:layout_width="80dp"
@@ -290,7 +290,7 @@
                            android:layout_height="fill_parent"
                            android:padding="13dp"
                            />
-                       <com.example.lmh.PickerView
+                       <com.example.lmh.util.PickerView
                            android:layout_weight="1"
                            android:layout_toRightOf="@id/weather_img"
                            android:id="@+id/weather_pv"

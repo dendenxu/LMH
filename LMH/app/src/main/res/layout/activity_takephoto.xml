@@ -24,7 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/shape_round_corner"
             android:scaleType="fitCenter"/>
-        <com.example.lmh.ThreeDLayout
+        <com.example.lmh.util.ThreeDLayout
             android:id="@+id/td_header"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 />
 
-        </com.example.lmh.ThreeDLayout>
+        </com.example.lmh.util.ThreeDLayout>
         <Button
             android:id="@+id/read"
             android:layout_width="70dp"

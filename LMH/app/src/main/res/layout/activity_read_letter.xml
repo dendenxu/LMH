@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
     android:layout_centerHorizontal="true"
-    android:background="#464159">
+    android:background="#464159">12500809
+    12
 
 <RelativeLayout
     android:paddingTop="40dp"

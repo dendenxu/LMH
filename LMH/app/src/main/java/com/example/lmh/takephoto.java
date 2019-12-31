@@ -1,15 +1,11 @@
 package com.example.lmh;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -22,10 +18,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.lmh.util.ThreeDLayout;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 
 public class takephoto extends AppCompatActivity {
     public static final int TAKE_PHOTO = 1;

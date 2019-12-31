@@ -40,16 +40,16 @@
         <activity
             android:name=".ReadLetter"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ThreeDLayout" />
-        <activity android:name=".BToast" />
-        <activity android:name=".PickerView" />
+        <activity android:name=".util.ThreeDLayout" />
+        <activity android:name=".util.BToast" />
+        <activity android:name=".util.PickerView" />
         <activity
             android:name=".receiveMessage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SendMessage"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".myGesture" />
+        <activity android:name=".util.myGesture" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
