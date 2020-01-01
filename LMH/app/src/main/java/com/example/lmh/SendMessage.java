@@ -234,26 +234,19 @@ public class SendMessage extends AppCompatActivity {
 
     class MyLocationListener implements BDLocationListener {
 
-        StringBuilder currentPosition = new StringBuilder();
+
 
         @Override
         public void onReceiveLocation(final BDLocation location) {
             runOnUiThread(new Runnable() {
                               @Override
                               public void run() {
-                                  currentPosition.append("纬度:").append(location.getLatitude()).append("\n");
-                                  currentPosition.append("经线:").append(location.getLongitude()).append("\n");
-                                  currentPosition.append("国家").append(location.getCountry()).append("\n");
-                                  currentPosition.append("省").append(location.getProvince()).append("\n");
-                                  currentPosition.append("城市").append(location.getCity()).append("\n");
-                                  currentPosition.append("区").append(location.getDistrict()).append("\n");
-                                  currentPosition.append("街道").append(location.getStreet()).append("\n");
-                                  currentPosition.append("定位方式:");
-                                  if (location.getLocType() == BDLocation.TypeGpsLocation) {
-                                      currentPosition.append("GPS");
-                                  } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
-                                      currentPosition.append("网络");
-                                  }
+                                  StringBuilder currentPosition = new StringBuilder();
+                                  currentPosition.append("纬度:").append(location.getLatitude()).append(" ");
+                                  currentPosition.append("经度:").append(location.getLongitude()).append("\n");
+                                  currentPosition.append(location.getCountry()).append(" ").append(location.getProvince()).append(" ");
+                                  currentPosition.append(location.getCity()).append(" ");
+                                  currentPosition.append(location.getDistrict()).append(" ").append(location.getStreet()).append("\n");
                                   //TODO 这里可以获取经纬度
                                   positionText.setText(currentPosition);
                               }

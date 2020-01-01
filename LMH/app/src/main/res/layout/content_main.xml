@@ -54,7 +54,8 @@
             android:layout_marginTop="100dp"
             android:layout_height="100dp"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:paddingTop="40dp">
             <ImageButton
                 android:layout_weight="1"
                 android:id="@+id/send"
