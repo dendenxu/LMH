@@ -30,6 +30,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="XkMFljbv55KO2znVzU0kcpnk9dVAUub8" />
+        <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/file_paths" />
 

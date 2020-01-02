@@ -7,16 +7,12 @@
     android:background="#88CBB1"
     android:padding="30dp"
     tools:context=".takephoto">
-
-
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-
         android:background="@drawable/shape_round_corner">
-
         <ImageView
             android:id="@+id/picture"
             android:layout_width="fill_parent"
@@ -31,7 +27,6 @@
             android:background="#00000000"
             android:layout_centerVertical="true"
             >
-
             <ImageView
                 android:src="@mipmap/letter"
                 android:id="@+id/textView"
@@ -42,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 />
-
         </com.example.lmh.util.ThreeDLayout>
         <Button
             android:id="@+id/read"
@@ -53,5 +47,4 @@
             android:background="#00000000"
             />
     </RelativeLayout>
-
 </LinearLayout>

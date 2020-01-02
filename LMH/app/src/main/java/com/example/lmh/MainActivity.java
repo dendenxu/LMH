@@ -41,17 +41,11 @@ public class MainActivity extends AppCompatActivity {
         animationView.setAnimation("data.json");
         animationView.loop(true);
         animationView.playAnimation();
-
-
-
         quteview=(RelativeLayout)findViewById(R.id.quteview);
-
         mask=(LinearLayout)findViewById(R.id.mask);
         mask.getBackground().setAlpha(0);
-
         mGestureListener=new myGesture(getApplicationContext());
         mGestureDetector = new GestureDetector(getApplicationContext(), mGestureListener);
-
         layoutParams = (RelativeLayout.LayoutParams) quteview.getLayoutParams();
         layoutParams.setMargins(0, 0, 0, (int)(-600*0.316-220));
         quteview.setLayoutParams(layoutParams);
@@ -141,12 +135,15 @@ public class MainActivity extends AppCompatActivity {
                 //拿到手指移动距离的大小
                 int move_bigX = moveX - startX;
                 int move_bigY = moveY - startY;
+
                 quteheight+=move_bigY;
                 quteheight=min(600,max(quteheight,-600));
-                int alpha=(int)(-(float)quteheight*0.1+60);
-                mask.getBackground().setAlpha((int)(alpha));
                 layoutParams.setMargins(0, 0, 0, (int)(-quteheight*0.316-220));
                 quteview.setLayoutParams(layoutParams);
+
+                int alpha=(int)(-(float)quteheight*0.1+60);
+                mask.getBackground().setAlpha((int)(alpha));
+
                 startX = moveX;
                 startY = moveY;
                 break;

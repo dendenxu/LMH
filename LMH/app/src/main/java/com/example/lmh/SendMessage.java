@@ -3,6 +3,7 @@ package com.example.lmh;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -26,6 +27,8 @@ import com.example.lmh.util.PickerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.airbnb.lottie.L.TAG;
 
 public class SendMessage extends AppCompatActivity {
     private LinearLayout llContentView;
@@ -145,7 +148,6 @@ public class SendMessage extends AppCompatActivity {
                 {
                     weather_img.setImageResource(R.mipmap.wumai);
                 }
-
             }
         });
 
@@ -223,6 +225,7 @@ public class SendMessage extends AppCompatActivity {
         option.setLocationMode(LocationClientOption.LocationMode.Device_Sensors);
         option.setIsNeedAddress(true);
         option.setOpenGps(true);
+        option.setAddrType("all");
         mLocationClient.setLocOption(option);
     }
     @Override
@@ -233,9 +236,6 @@ public class SendMessage extends AppCompatActivity {
     }
 
     class MyLocationListener implements BDLocationListener {
-
-
-
         @Override
         public void onReceiveLocation(final BDLocation location) {
             runOnUiThread(new Runnable() {
@@ -248,7 +248,10 @@ public class SendMessage extends AppCompatActivity {
                                   currentPosition.append(location.getCity()).append(" ");
                                   currentPosition.append(location.getDistrict()).append(" ").append(location.getStreet()).append("\n");
                                   //TODO 这里可以获取经纬度
-                                  positionText.setText(currentPosition);
+                                  if(!currentPosition.toString().contains("null"))
+                                  {
+                                      positionText.setText(currentPosition);
+                                  }
                               }
                           }
             );

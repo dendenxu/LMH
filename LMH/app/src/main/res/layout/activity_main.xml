@@ -5,9 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
-
     <com.airbnb.lottie.LottieAnimationView
         android:scaleType="centerCrop"
         android:id="@+id/animation_view"
@@ -45,11 +42,6 @@
             android:layout_weight="1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"></LinearLayout>
-
     </LinearLayout>
-
-
-
     <include layout="@layout/content_main" />
-
 </RelativeLayout>

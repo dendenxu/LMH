@@ -7,8 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
     android:layout_centerHorizontal="true"
-    android:background="#464159">12500809
-    12
+    android:background="#464159">
 
 <RelativeLayout
     android:paddingTop="40dp"
@@ -59,15 +58,6 @@
             android:text="夏天的飞鸟,飞到我的窗前唱歌,又飞去了. \n秋天的黄叶,它们没有什么可唱,只叹息一声,飞落在那里."
             android:textColor="#ffffff"
             android:padding="10dp"/>
-
-
-
     </RelativeLayout>
-
-
-
-
 </RelativeLayout>
-
-
 </LinearLayout>

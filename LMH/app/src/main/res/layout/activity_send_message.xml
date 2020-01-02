@@ -20,7 +20,6 @@
         android:background="@drawable/up_round"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-
         <ImageButton
             android:id="@+id/send_btn"
             android:layout_width="40dp"
@@ -30,7 +29,6 @@
             android:scaleType="fitXY"
             android:src="@mipmap/add"
             android:layout_marginBottom="20dip"/>
-
        <LinearLayout
            android:layout_width="fill_parent"
            android:layout_height="fill_parent"
@@ -90,7 +88,6 @@
 
                </LinearLayout>
            </LinearLayout>
-
            <LinearLayout
                android:layout_weight="1"
                android:id="@+id/gps_display"
@@ -145,8 +142,6 @@
 
                </LinearLayout>
            </LinearLayout>
-
-
            <LinearLayout
                android:layout_weight="1"
                android:id="@+id/time_choose"
@@ -235,7 +230,6 @@
 
                </LinearLayout>
            </LinearLayout>
-
            <LinearLayout
                android:layout_weight="1"
                android:id="@+id/weather_choose"
