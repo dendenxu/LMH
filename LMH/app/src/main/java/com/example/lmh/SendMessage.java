@@ -150,7 +150,7 @@ public class SendMessage extends AppCompatActivity {
                 }else if(text.equals("阵雨"))
                 {
                     weather_img.setImageResource(R.mipmap.zhenyu);
-                }else if(text.equals("雨"))
+                }else if(text.equals("小雨"))
                 {
                     weather_img.setImageResource(R.mipmap.yu);
                 }else if(text.equals("雾霾"))
