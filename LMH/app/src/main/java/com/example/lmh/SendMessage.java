@@ -3,6 +3,7 @@ package com.example.lmh;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -27,8 +28,8 @@ import com.example.lmh.util.PickerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.lmh.util.SQLLink;
 
-import static com.airbnb.lottie.L.TAG;
 
 public class SendMessage extends AppCompatActivity {
     private LinearLayout llContentView;
@@ -42,11 +43,17 @@ public class SendMessage extends AppCompatActivity {
     PickerView weather_pv;
     private ImageView weather_img;
 
+    String message,locx,locy,weather;
+    int dateh,datem;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mLocationClient = new LocationClient(getApplicationContext());
         mLocationClient.registerLocationListener(new MyLocationListener());
         super.onCreate(savedInstanceState);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.activity_send_message);
         initTimePicker();
         initGPS();
@@ -89,6 +96,7 @@ public class SendMessage extends AppCompatActivity {
             requestLocation();
         }
     }
+
     private void initTimePicker()
     {
         hour_pv = (PickerView) findViewById(R.id.hour_pv);
@@ -122,6 +130,7 @@ public class SendMessage extends AppCompatActivity {
             @Override
             public void onSelect(String text)
             {
+                weather = text;
                 //TODO  这里获取用户指定的天气
                 if(text.equals("多云"))
                 {
@@ -151,30 +160,27 @@ public class SendMessage extends AppCompatActivity {
             }
         });
 
+
         //TODO 下面两个监听函数可以获取用户指定的时间
         hour_pv.setData(hours);
         hour_pv.setOnSelectListener(new PickerView.onSelectListener()
         {
-
             @Override
             public void onSelect(String text)
             {
-
+                dateh = Integer.parseInt(text);
             }
         });
         minute_pv.setData(miniutes);
         minute_pv.setOnSelectListener(new PickerView.onSelectListener()
         {
-
             @Override
             public void onSelect(String text)
             {
-
+                datem = Integer.parseInt(text);
             }
         });
     }
-
-
 
 
     private void initCtrl()
@@ -187,10 +193,20 @@ public class SendMessage extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                message = message_edit.getText().toString();
+                StringBuilder sb = new StringBuilder(message);
+                int i = sb.indexOf("\"");
+                while(i!=-1){
+                    sb.insert(i,"\\");
+                    i = sb.indexOf("\"");
+                }
+                message = sb.toString();
+                if(SQLLink.insert(message,locx,locy,dateh,datem,weather))toast_good();
+                else toast_bad();
             }
         });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -247,7 +263,11 @@ public class SendMessage extends AppCompatActivity {
                                   currentPosition.append(location.getCountry()).append(" ").append(location.getProvince()).append(" ");
                                   currentPosition.append(location.getCity()).append(" ");
                                   currentPosition.append(location.getDistrict()).append(" ").append(location.getStreet()).append("\n");
+
                                   //TODO 这里可以获取经纬度
+                                  locx = String.valueOf(location.getLatitude());
+                                  locy = String.valueOf(location.getLongitude());
+
                                   if(!currentPosition.toString().contains("null"))
                                   {
                                       positionText.setText(currentPosition);

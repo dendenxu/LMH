@@ -31,7 +31,7 @@ public class takephoto extends AppCompatActivity {
     private ImageView picture;
     //图片本地的真实路径
     private Uri imageUri;
-
+    String message;
     private String[] mPermissionsArrays = new String[]{
             Manifest.permission.CAMERA,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -76,7 +76,8 @@ public class takephoto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        Intent i = getIntent();
+        message = i.getStringExtra("context");
         if (!checkPermissionAllGranted(mPermissionsArrays)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(mPermissionsArrays, REQUEST_PERMISSION);
@@ -91,6 +92,7 @@ public class takephoto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent sendIntent=new Intent(takephoto.this,ReadLetter.class);
+                sendIntent.putExtra("context",message);
                 startActivity(sendIntent);
             }
         });

@@ -2,6 +2,7 @@ package com.example.lmh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -12,10 +13,12 @@ public class ReadLetter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent i = getIntent();
+        String text = i.getStringExtra("context");
         setContentView(R.layout.activity_read_letter);
 
         read=findViewById(R.id.read);
-        read.setText("夏天的飞鸟,飞到我的窗前唱歌,又飞去了. \n秋天的黄叶,它们没有什么可唱,只叹息一声,飞落在那里.");
+        read.setText(text);
         Typeface typeface= Typeface.createFromAsset(getAssets(),"方正清刻本悦宋简.TTF");
 
         read.setTypeface(typeface);
