@@ -114,7 +114,9 @@ public class receiveMessage extends AppCompatActivity {
                 search_btn.playAnimation();
                 //TODO  这里是按下按钮后，提取用户当前的天气，位置，时间等因素，在数据库里搜索是否有符合条件的信件
 
-                message = SQLLink.select(locx, locy);
+                message = SQLLink.select(locx, locy,weather,hour,minute);
+                Log.e("sql",weather);
+                Log.e("sql",hour+" ");
                 if (message == null) toast_bad();
                 else {
                     toast_good();
